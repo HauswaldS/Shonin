@@ -1,0 +1,5 @@
+TODO Implement a real logger
+TODO enable websocket later
+TODO create sequelize models
+TODO non-hardcoded config - client side
+TODO configure CORS
