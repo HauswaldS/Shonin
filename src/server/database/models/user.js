@@ -10,5 +10,6 @@ export default sqPool.define('user', {
     email: {type: Sequelize.STRING},
     email_verified: {type: Sequelize.BOOLEAN},
     given_name: {type: Sequelize.STRING},
-    family_name: {type: Sequelize.STRING},
+    updatedAt: {type: Sequelize.DATE},
+    createdAt: {type: Sequelize.DATE},
 })

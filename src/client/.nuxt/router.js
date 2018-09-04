@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _38e3c906 = () => import('..\\pages\\Users\\index.vue' /* webpackChunkName: "pages_Users_index" */).then(m => m.default || m)
-const _11c921e6 = () => import('..\\pages\\Applicators\\index.vue' /* webpackChunkName: "pages_Applicators_index" */).then(m => m.default || m)
-const _6eb07908 = () => import('..\\pages\\Login\\index.vue' /* webpackChunkName: "pages_Login_index" */).then(m => m.default || m)
-const _22035962 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+const _8d22508c = () => import('..\\pages\\Users\\index.vue' /* webpackChunkName: "pages_Users_index" */).then(m => m.default || m)
+const _d9496cec = () => import('..\\pages\\Applicators\\index.vue' /* webpackChunkName: "pages_Applicators_index" */).then(m => m.default || m)
+const _c2ef008e = () => import('..\\pages\\Login\\index.vue' /* webpackChunkName: "pages_Login_index" */).then(m => m.default || m)
+const _19079c9c = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 
 
@@ -68,22 +68,22 @@ export function createRouter () {
     routes: [
 		{
 			path: "/Users",
-			component: _38e3c906,
+			component: _8d22508c,
 			name: "Users"
 		},
 		{
 			path: "/Applicators",
-			component: _11c921e6,
+			component: _d9496cec,
 			name: "Applicators"
 		},
 		{
 			path: "/Login",
-			component: _6eb07908,
+			component: _c2ef008e,
 			name: "Login"
 		},
 		{
 			path: "/",
-			component: _22035962,
+			component: _19079c9c,
 			name: "index"
 		}
     ],

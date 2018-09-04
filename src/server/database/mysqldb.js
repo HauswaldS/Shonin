@@ -23,10 +23,15 @@ export default (sqPool) => {
                 .catch(err => console.log(err))
         },
         addNewUser(user) {
-            User.create(user)
-                .then(user => {
-                    console.log(user)
-                }, err => console.log(err))
-        },
+            User.findOrCreate({where: {email: user.email}, defaults: user})
+                .spread((user, created) => {
+                console.log(user.get({
+                    plain: true
+                }))
+                    return user.get({
+                        plain: true
+                    });
+            })
+            },
     }
 }
