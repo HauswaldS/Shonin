@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import getDotenv from '../server/utils/dotenv';
+import check_auth from '../server/utils/check_auth';
 import graphqlHTTP from 'express-graphql';
 import Sequelize from 'sequelize';
 import jwt from 'express-jwt';
@@ -15,7 +16,8 @@ import schema from './schema';
 
 getDotenv();
 
-import  sqConfig from './database/config/mysql.js';
+import sqConfig from './database/config/mysql.js';
+
 const PROD = process.env.NODE_ENV === 'production';
 const {PORT = 8080} = process.env;
 
@@ -48,6 +50,7 @@ app.use('/static', express.static('build'));
 app.use('/graphql',
     auth,
     (req, res) => {
+        console.log(req.user)
         const loaders = {
             allApplicators: new DataLoader(sqDb.getAllApplicators),
             applicatorById: new DataLoader(sqDb.getApplicatorById),

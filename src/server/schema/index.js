@@ -17,6 +17,7 @@ const RootMutationType = new GraphQLObjectType({
 
 import ApplicatorType from './types/applicator';
 import UserType from './types/user';
+import check_auth from "../utils/check_auth";
 
 const RootQueryType = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -44,8 +45,9 @@ const RootQueryType = new GraphQLObjectType({
                     type: GraphQLInt
                 },
             },
-            resolve: (obj, args, {sqDb}) => {
-                return sqDb.getAllApplicators(args);
+            resolve: (obj, args, {sqDb, user}) => {
+                if (check_auth(user)) return sqDb.getAllApplicators(args);
+                else return new Error('Not authenticated');
             }
         },
         user: {

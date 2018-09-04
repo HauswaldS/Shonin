@@ -1,7 +1,6 @@
 export default {
-    authService: null,
     applicators: [],
-    user: {
+    loggedUser: {
         id: '',
         name: '',
         email: ''

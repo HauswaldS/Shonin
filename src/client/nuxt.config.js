@@ -35,7 +35,7 @@ module.exports = {
     */
     plugins: [
         '@/plugins/element-ui',
-        '@/plugins/graphql-apollo-client'
+        {src: '@/plugins/graphql-apollo-client', ssr: false}
     ],
 
     /*
@@ -44,6 +44,9 @@ module.exports = {
     modules: [
         '@nuxtjs/axios',
     ],
+    router: {
+        middleware: 'check_auth'
+    },
     /*
     ** Build configuration
     */

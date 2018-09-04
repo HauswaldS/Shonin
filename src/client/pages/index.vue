@@ -7,24 +7,17 @@
 </template>
 
 <script>
-    import AuthService from '../components/utils/auth_service';
+    import authService from '../utils/auth_service';
+    import {mapState} from 'vuex';
 
     export default {
-        data() {
-            return {
-                authService: null
-            }
-        },
         methods: {
             log() {
-                this.authService.login()
+                authService.login()
             },
             logout() {
-                this.authService.logout()
+                authService.logout()
             }
-        },
-        created() {
-            this.authService = new AuthService();
         }
     }
 </script>

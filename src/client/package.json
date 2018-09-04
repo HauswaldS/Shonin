@@ -12,27 +12,24 @@
         "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "precommit": "npm run lint"
     },
-    "config": {
-        "nuxt": {
-            "port": 8080
-        }
-    },
     "dependencies": {
         "@nuxtjs/axios": "^5.3.1",
-        "EventEmitter": "^1.0.0",
         "apollo-cache-inmemory": "^1.2.9",
         "apollo-client": "^2.4.1",
         "apollo-link": "^1.2.2",
+        "apollo-link-context": "^1.0.8",
         "apollo-link-http": "^1.5.4",
         "auth0-js": "^9.7.3",
         "element-ui": "^2.2.1",
-        "eventemitter3": "^3.1.0",
         "fs": "0.0.1-security",
         "graphql": "^14.0.0",
         "graphql-tag": "^2.9.2",
+        "js-cookie": "^2.2.0",
+        "jwt-decode": "^2.2.0",
         "node-fetch": "^2.2.0",
-        "nuxt": "^1.0.0",
-        "vue-apollo": "^3.0.0-beta.21"
+        "nuxt": "^1.4.2",
+        "vue-apollo": "^3.0.0-beta.21",
+        "vue-awesome": "^3.1.2"
     },
     "devDependencies": {
         "babel-eslint": "^8.2.1",

@@ -12,9 +12,9 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
-import nuxt_plugin_axios_90d6a95c from 'nuxt_plugin_axios_90d6a95c' // Source: ./axios.js
+import nuxt_plugin_axios_38a79b65 from 'nuxt_plugin_axios_38a79b65' // Source: ./axios.js
 import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\plugins\\element-ui
-import nuxt_plugin_graphqlapolloclient_3808d39e from 'nuxt_plugin_graphqlapolloclient_3808d39e' // Source: ..\\plugins\\graphql-apollo-client
+import nuxt_plugin_graphqlapolloclient_3808d39e from 'nuxt_plugin_graphqlapolloclient_3808d39e' // Source: ..\\plugins\\graphql-apollo-client (ssr: false)
 
 
 // Component: <no-ssr>
@@ -153,10 +153,12 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
-  if (typeof nuxt_plugin_axios_90d6a95c === 'function') await nuxt_plugin_axios_90d6a95c(app.context, inject)
+  if (typeof nuxt_plugin_axios_38a79b65 === 'function') await nuxt_plugin_axios_38a79b65(app.context, inject)
   if (typeof nuxt_plugin_elementui_d905880e === 'function') await nuxt_plugin_elementui_d905880e(app.context, inject)
-  if (typeof nuxt_plugin_graphqlapolloclient_3808d39e === 'function') await nuxt_plugin_graphqlapolloclient_3808d39e(app.context, inject)
   
+  if (process.browser) { 
+    if (typeof nuxt_plugin_graphqlapolloclient_3808d39e === 'function') await nuxt_plugin_graphqlapolloclient_3808d39e(app.context, inject)
+  }
 
   // If server-side, wait for async component to be resolved first
   if (process.server && ssrContext && ssrContext.url) {

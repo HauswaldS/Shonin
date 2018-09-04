@@ -10,7 +10,7 @@ export default new GraphQLObjectType({
     fields: {
         id: {type: GraphQLID},
         totalCount: {type: GraphQLInt},
-        auth0_id: {type: GraphQLInt},
+        auth0_id: {type: GraphQLString},
         name: {type: GraphQLString},
         nickname: {type: GraphQLString},
         email: {type: GraphQLString},

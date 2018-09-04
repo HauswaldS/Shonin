@@ -5,7 +5,6 @@ export default (sqPool) => {
         getAllApplicators({limit = 10, page = 1}) {
             return sqPool.query(`SELECT * FROM applicator LIMIT ${limit} OFFSET ${(limit * page) - limit}`, {type: sqPool.QueryTypes.SELECT})
                 .then(res => {
-                    console.log(res);
                     return res;
                 })
                 .catch(err => console.log(err))
@@ -16,22 +15,21 @@ export default (sqPool) => {
                 .catch(err => console.log(err))
         },
         getUserById(id) {
-            User.findOne({where: {id}})
+            return User.find({where: {id}})
                 .then(user => {
-                    console.log(user)
+                    return [user.get({
+                        plain: true
+                    })];
                 })
                 .catch(err => console.log(err))
         },
         addNewUser(user) {
-            User.findOrCreate({where: {email: user.email}, defaults: user})
+            return User.findOrCreate({where: {auth0_id: user.auth0_id}, defaults: user})
                 .spread((user, created) => {
-                console.log(user.get({
-                    plain: true
-                }))
                     return user.get({
                         plain: true
                     });
-            })
-            },
+                })
+        }
     }
 }

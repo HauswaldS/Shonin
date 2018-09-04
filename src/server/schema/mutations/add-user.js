@@ -1,22 +1,28 @@
 import UserType from '../types/user';
-import {GraphQLNonNull, GraphQLString, GraphQLInt}from 'graphql';
+import check_auth from '../../utils/check_auth';
+
+import {GraphQLNonNull, GraphQLString, GraphQLBoolean} from 'graphql';
 
 export default {
     type: UserType,
     args: {
-        auth0_id: {type: new GraphQLNonNull(GraphQLInt)},
+        auth0_id: {type: new GraphQLNonNull(GraphQLString)},
         name: {type: new GraphQLNonNull(GraphQLString)},
         nickname: {type: GraphQLString},
         email: {type: new GraphQLNonNull(GraphQLString)},
-        email_verified: {type: GraphQLString},
+        email_verified: {type: GraphQLBoolean},
         given_name: {type: GraphQLString},
         family_name: {type: GraphQLString},
         createdAt: {type: GraphQLString},
         updatedAt: {type: GraphQLString}
     },
-    resolve: (obj, newUser, {sqDb}) => {
-        console.log(newUser)
-        return sqDb.addNewUser(newUser)
+    resolve: (obj, newUser, {sqDb, user}) => {
+        if (check_auth(user)) return sqDb.addNewUser(newUser)
+        else return {
+            error: {
+                title: 'Non authenticated user'
+            }
+        }
     }
 };
 
