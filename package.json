@@ -4,8 +4,8 @@
   "description": "Thermacote Project",
   "main": "index.js",
   "scripts": {
-    "build": "set NODE_ENV=production && rimraf dist && babel . -d dist --ignore node_modules ",
-    "dev": "set NODE_ENV=development && nodemon ./src/server/server.js --exec babel-node --watch ",
+    "dev:server": "set NODE_ENV=development && nodemon ./src/server/server.js --exec babel-node --watch ",
+    "build:server": "set NODE_ENV=production && rimraf dist && babel . -d dist --ignore node_modules ",
     "db:migrate-up": "babel-node ./src/server/database/migrations/migrate.js up",
     "test": "npm test"
   },

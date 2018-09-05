@@ -12,7 +12,7 @@ const RootMutationType = new GraphQLObjectType({
     fields: {
         AddUser: AddUserMutation
     }
-})
+});
 
 
 import ApplicatorType from './types/applicator';
@@ -33,7 +33,7 @@ const RootQueryType = new GraphQLObjectType({
             resolve: (obj, args, {loaders}) => {
                 if (args.id) return loaders.applicatorById.load(args.id);
             }
-    },
+        },
         applicators: {
             type: new GraphQLList(ApplicatorType),
             description: "Multiple Applicators",
@@ -59,7 +59,7 @@ const RootQueryType = new GraphQLObjectType({
                 }
             },
             resolve: (obj, args, {loaders}) => {
-                if (args.id) return loaders.userById.load(args.id);
+                if (args.id) return loaders.userById.load(args.id)
             }
         }
     }

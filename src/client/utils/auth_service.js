@@ -19,7 +19,6 @@ const authService = {
     },
 
     setSession(authResult) {
-        // Set the time that the Access Token will expire at
         let expires_at = JSON.stringify(
             authResult.expires_in * 1000 + new Date().getTime()
         );
@@ -30,13 +29,11 @@ const authService = {
     },
 
     logout() {
-        // Clear Access Token and ID Token from local storage
         localStorage.removeItem('access_token');
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
         localStorage.setItem('logout', new Date().getTime());
         Cookie.remove('access_token');
-        // this.authNotifier.emit('authChange', false)
         this.webAuth().logout({returnTo: 'http://localhost:8080'})
     },
 

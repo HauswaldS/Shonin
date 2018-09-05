@@ -3,12 +3,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _5e7788ce = () => import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */).then(m => m.default || m)
-const _24eb85af = () => import('..\\pages\\admin.vue' /* webpackChunkName: "pages_admin" */).then(m => m.default || m)
-const _e376481a = () => import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages_admin_index" */).then(m => m.default || m)
-const _07db0e39 = () => import('..\\pages\\admin\\users\\index.vue' /* webpackChunkName: "pages_admin_users_index" */).then(m => m.default || m)
-const _2f7e64c9 = () => import('..\\pages\\admin\\applicators\\index.vue' /* webpackChunkName: "pages_admin_applicators_index" */).then(m => m.default || m)
-const _19079c9c = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+const _6eb07908 = () => import('..\\pages\\Login\\index.vue' /* webpackChunkName: "pages_Login_index" */).then(m => m.default || m)
+const _206da74c = () => import('..\\pages\\admin.vue' /* webpackChunkName: "pages_admin" */).then(m => m.default || m)
+const _f3af3854 = () => import('..\\pages\\Admin\\index.vue' /* webpackChunkName: "pages_Admin_index" */).then(m => m.default || m)
+const _b89e95d4 = () => import('..\\pages\\Admin\\Users\\index.vue' /* webpackChunkName: "pages_Admin_Users_index" */).then(m => m.default || m)
+const _667e9c34 = () => import('..\\pages\\Admin\\Applicators\\index.vue' /* webpackChunkName: "pages_Admin_Applicators_index" */).then(m => m.default || m)
+const _22035962 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 
 
@@ -69,34 +69,33 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/login",
-			component: _5e7788ce,
-			name: "login"
+			path: "/Login",
+			component: _6eb07908,
+			name: "Login"
 		},
 		{
 			path: "/admin",
-			component: _24eb85af,
-			children: [
-				{
-					path: "",
-					component: _e376481a,
-					name: "admin"
-				},
-				{
-					path: "users",
-					component: _07db0e39,
-					name: "admin-users"
-				},
-				{
-					path: "applicators",
-					component: _2f7e64c9,
-					name: "admin-applicators"
-				}
-			]
+			component: _206da74c,
+			name: "admin"
+		},
+		{
+			path: "/Admin",
+			component: _f3af3854,
+			name: "Admin"
+		},
+		{
+			path: "/Admin/Users",
+			component: _b89e95d4,
+			name: "Admin-Users"
+		},
+		{
+			path: "/Admin/Applicators",
+			component: _667e9c34,
+			name: "Admin-Applicators"
 		},
 		{
 			path: "/",
-			component: _19079c9c,
+			component: _22035962,
 			name: "index"
 		}
     ],

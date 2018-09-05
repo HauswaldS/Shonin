@@ -24,8 +24,9 @@ const {PORT = 8080} = process.env;
 
 const sqPool = new Sequelize(sqConfig.database, sqConfig.username, sqConfig.password, sqConfig.config);
 import db from './database/mysqldb.js';
+import models from './database/models';
 
-const sqDb = db(sqPool);
+const sqDb = db(models(sqPool));
 
 const app = express();
 const auth = jwt({

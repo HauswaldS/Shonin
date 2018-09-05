@@ -1,6 +1,9 @@
-import User from './models/users';
-
-export default (sqPool) => {
+export default ({
+                    sqPool,
+                    users,
+                    applicators,
+                    case_studies
+                }) => {
     return {
         getAllApplicators({limit = 10, page = 1}) {
             return sqPool.query(`SELECT * FROM applicator LIMIT ${limit} OFFSET ${(limit * page) - limit}`, {type: sqPool.QueryTypes.SELECT})
@@ -15,7 +18,7 @@ export default (sqPool) => {
                 .catch(err => console.log(err))
         },
         getUserById(id) {
-            return User.find({where: {id}})
+            return users.find({where: {id}})
                 .then(user => {
                     return [user.get({
                         plain: true
@@ -24,7 +27,7 @@ export default (sqPool) => {
                 .catch(err => console.log(err))
         },
         addNewUser(user) {
-            return User.findOrCreate({where: {auth0_id: user.auth0_id}, defaults: user})
+            return users.findOrCreate({where: {auth0_id: user.auth0_id}, defaults: user})
                 .spread((user, created) => {
                     return user.get({
                         plain: true
