@@ -1,3 +1,8 @@
 <template>
-    <h1>Admin template !</h1>
+    <h1>Dashboard bro</h1>
 </template>
+
+<script>
+
+    export default {};
+</script>

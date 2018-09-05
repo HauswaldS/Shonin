@@ -33,7 +33,7 @@ const RootQueryType = new GraphQLObjectType({
             resolve: (obj, args, {loaders}) => {
                 if (args.id) return loaders.applicatorById.load(args.id);
             }
-        },
+    },
         applicators: {
             type: new GraphQLList(ApplicatorType),
             description: "Multiple Applicators",

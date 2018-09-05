@@ -1,4 +1,5 @@
 const pkg = require('./package');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     mode: 'universal',
@@ -27,7 +28,8 @@ module.exports = {
     ** Global CSS
     */
     css: [
-        'element-ui/lib/theme-chalk/index.css'
+        'element-ui/lib/theme-chalk/index.css',
+        '@fortawesome/fontawesome-free/css/all.css'
     ],
 
     /*
@@ -35,6 +37,7 @@ module.exports = {
     */
     plugins: [
         '@/plugins/element-ui',
+        '@/plugins/vue-awesome',
         {src: '@/plugins/graphql-apollo-client', ssr: false}
     ],
 
@@ -51,6 +54,7 @@ module.exports = {
     ** Build configuration
     */
     build: {
+        vendor: ['vue-awesome'],
         /*
         ** You can extend webpack config here
         */
@@ -62,8 +66,15 @@ module.exports = {
                     test: /\.(js|vue)$/,
                     loader: 'eslint-loader',
                     exclude: /(node_modules)/
-                })
+                });
+            }
+            if (ctx.isServer) {
+                config.externals = [
+                    nodeExternals({
+                        whitelist: [/^vue-awesome/]
+                    })
+                ];
             }
         }
     }
-}
+};

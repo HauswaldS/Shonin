@@ -3,6 +3,8 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '..\\node_modules\\element-ui\\lib\\theme-chalk\\index.css'
 
+import '..\\node_modules\\@fortawesome\\fontawesome-free\\css\\all.css'
+
 
 let layouts = {
 

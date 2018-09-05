@@ -50,7 +50,6 @@ app.use('/static', express.static('build'));
 app.use('/graphql',
     auth,
     (req, res) => {
-        console.log(req.user)
         const loaders = {
             allApplicators: new DataLoader(sqDb.getAllApplicators),
             applicatorById: new DataLoader(sqDb.getApplicatorById),
