@@ -46,6 +46,10 @@ module.exports = {
     */
     modules: [
         '@nuxtjs/axios',
+        ['nuxt-i18n', {
+            locales: ['en', 'fr'],
+            defaultLocale: 'en'
+        }]
     ],
     router: {
         middleware: 'check_auth'

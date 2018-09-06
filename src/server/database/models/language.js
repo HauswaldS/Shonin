@@ -7,7 +7,7 @@ module.exports = (sqPool) => {
         logo: {type: Sequelize.STRING, allowNull: false},
     });
 
-    Language.associations = models => {
+    Language.associate = models => {
         Language.hasMany(models.content);
     };
 

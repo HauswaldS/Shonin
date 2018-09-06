@@ -1,9 +1,4 @@
-export default ({
-                    sqPool,
-                    users,
-                    applicators,
-                    case_studies
-                }) => {
+export default ({sqPool, users, applicators, case_studies}) => {
     return {
         getAllApplicators({limit = 10, page = 1}) {
             return sqPool.query(`SELECT * FROM applicator LIMIT ${limit} OFFSET ${(limit * page) - limit}`, {type: sqPool.QueryTypes.SELECT})

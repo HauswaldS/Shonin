@@ -1,14 +1,11 @@
 const Sequelize = require('sequelize');
 
 module.exports = (sqPool) => {
-    const CaseStudy = sqPool.define('case_study', {
-        name: {type: Sequelize.STRING, allowNull: false},
-        adresse: {type: Sequelize.INTEGER},
-        phone: {type: Sequelize.STRING},
-    });
+    const CaseStudy = sqPool.define('case_study');
 
-    CaseStudy.associates = models => {
+    CaseStudy.associate = models => {
         CaseStudy.belongsToMany(models.taxonomy, {through: models.taxonomy_case_study});
+        CaseStudy.hasMany(models.content);
     };
 
     return CaseStudy;

@@ -6,8 +6,9 @@ module.exports = (sqPool) => {
         label: {type: Sequelize.STRING, allowNull: false}
     });
 
-    Country.associations = models => {
+    Country.associate = models => {
         Country.hasMany(models.country_division);
+        Country.hasMany(models.area);
     };
 
     return Country;

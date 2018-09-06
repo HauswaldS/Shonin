@@ -7,7 +7,7 @@ module.exports = (sqPool) => {
     });
 
 
-    Type.associations = models => {
+    Type.associate = models => {
         Type.hasMany(models.taxonomy);
         Type.hasMany(models.content);
     };

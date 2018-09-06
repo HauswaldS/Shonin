@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 module.exports = (sqPool) => {
     const Applicator = sqPool.define('applicator', {
         name: {type: Sequelize.STRING, allowNull: false},
-        adresse: {type: Sequelize.STRING},
+        adress: {type: Sequelize.TEXT},
         phone: {type: Sequelize.STRING},
         email: {type: Sequelize.STRING},
         website: {type: Sequelize.STRING},

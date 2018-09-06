@@ -6,7 +6,7 @@ module.exports = (sqPool) => {
         label: {type: Sequelize.STRING}
     });
 
-    CountryDivision.associations = models => {
+    CountryDivision.associate = models => {
         CountryDivision.belongsToMany(models.applicator, {through: models.applicator_country_division});
         CountryDivision.hasMany(models.area);
     };

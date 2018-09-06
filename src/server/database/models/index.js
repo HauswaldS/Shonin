@@ -24,7 +24,6 @@ module.exports = (sqPool) => {
             db[modelName].associate(db);
         }
     });
-    console.log(db);
     db.sqPool = sqPool;
     return db;
-}
+};

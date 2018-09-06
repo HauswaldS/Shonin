@@ -6,7 +6,7 @@ module.exports = (sqPool) => {
     });
 
 
-    Page.associations = models => {
+    Page.associate = models => {
         Page.hasMany(models.page_element)
     };
 

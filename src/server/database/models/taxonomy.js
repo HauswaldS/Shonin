@@ -7,9 +7,9 @@ module.exports = (sqPool) => {
     });
 
 
-    Taxonomy.associations = models => {
-        Taxonomy.belongsToMany(models.applicator, {through: models.taxonomy_applicator});
+    Taxonomy.associate = models => {
         Taxonomy.belongsToMany(models.case_study, {through: models.taxonomy_case_study});
+        Taxonomy.belongsToMany(models.applicator, {through: models.taxonomy_applicator});
         Taxonomy.belongsToMany(models.content, {through: models.taxonomy_content});
         Taxonomy.belongsToMany(models.document, {through: models.taxonomy_document});
         Taxonomy.belongsToMany(models.realisation, {through: models.taxonomy_realisation});

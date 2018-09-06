@@ -71,32 +71,62 @@ export function createRouter () {
 		{
 			path: "/Login",
 			component: _6eb07908,
-			name: "Login"
+			name: "Login___en"
+		},
+		{
+			path: "/fr/Login",
+			component: _6eb07908,
+			name: "Login___fr"
 		},
 		{
 			path: "/admin",
 			component: _206da74c,
-			name: "admin"
+			name: "admin___en"
+		},
+		{
+			path: "/fr/admin",
+			component: _206da74c,
+			name: "admin___fr"
 		},
 		{
 			path: "/Admin",
 			component: _f3af3854,
-			name: "Admin"
+			name: "Admin___en"
+		},
+		{
+			path: "/fr/Admin",
+			component: _f3af3854,
+			name: "Admin___fr"
 		},
 		{
 			path: "/Admin/Users",
 			component: _b89e95d4,
-			name: "Admin-Users"
+			name: "Admin-Users___en"
+		},
+		{
+			path: "/fr/Admin/Users",
+			component: _b89e95d4,
+			name: "Admin-Users___fr"
 		},
 		{
 			path: "/Admin/Applicators",
 			component: _667e9c34,
-			name: "Admin-Applicators"
+			name: "Admin-Applicators___en"
+		},
+		{
+			path: "/fr/Admin/Applicators",
+			component: _667e9c34,
+			name: "Admin-Applicators___fr"
 		},
 		{
 			path: "/",
 			component: _22035962,
-			name: "index"
+			name: "index___en"
+		},
+		{
+			path: "/fr/",
+			component: _22035962,
+			name: "index___fr"
 		}
     ],
     
