@@ -46,9 +46,25 @@ module.exports = {
     */
     modules: [
         '@nuxtjs/axios',
+        '@nuxtjs/sitemap',
         ['nuxt-i18n', {
-            locales: ['en', 'fr'],
-            defaultLocale: 'en'
+            defaultLocale: 'en',
+            locales: [
+                {
+                    code: 'en',
+                    file: 'en-US.js'
+                },
+                {
+                    code: 'es',
+                    file: 'es-ES.js'
+                },
+                {
+                    code: 'fr',
+                    file: 'fr-FR.js'
+                }
+            ],
+            lazy: true,
+            langDir: 'lang/'
         }]
     ],
     router: {

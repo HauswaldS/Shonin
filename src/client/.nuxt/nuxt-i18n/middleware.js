@@ -8,7 +8,7 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
   }
 
   // Options
-  const lazy = false
+  const lazy = true
   const vuex = {"moduleName":"i18n","mutations":{"setLocale":"I18N_SET_LOCALE","setMessages":"I18N_SET_MESSAGES"}}
   const differentDomains = false
   const isSpa = false
@@ -49,7 +49,7 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
   return null
 }
   const routesNameSeparator = '___'
-  const locales = getLocaleCodes(["en","fr"])
+  const locales = getLocaleCodes([{"code":"en","file":"en-US.js"},{"code":"es","file":"es-ES.js"},{"code":"fr","file":"fr-FR.js"}])
   const syncVuex = (locale = null, messages = null) => {
   if (vuex && store) {
     if (locale !== null && vuex.mutations.setLocale) {

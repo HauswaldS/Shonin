@@ -5,7 +5,7 @@ Vue.use(VueI18n)
 
 export default async ({ app, route, store, req }) => {
   // Options
-  const lazy = false
+  const lazy = true
   const vuex = {"moduleName":"i18n","mutations":{"setLocale":"I18N_SET_LOCALE","setMessages":"I18N_SET_MESSAGES"}}
 
   // Helpers
@@ -102,7 +102,7 @@ export default async ({ app, route, store, req }) => {
 
   // Set instance options
   app.i18n = new VueI18n({})
-  app.i18n.locales = ["en","fr"]
+  app.i18n.locales = [{"code":"en","file":"en-US.js"},{"code":"es","file":"es-ES.js"},{"code":"fr","file":"fr-FR.js"}]
   app.i18n.defaultLocale = 'en'
   app.i18n.differentDomains = false
   app.i18n.forwardedHost = false

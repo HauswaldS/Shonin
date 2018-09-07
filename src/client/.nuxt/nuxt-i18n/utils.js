@@ -17,6 +17,16 @@ export async function loadLanguageAsync (i18n, locale) {
       const file = langOptions[LOCALE_FILE_KEY]
       if (file) {
         
+        try {
+          const module = await import(/* webpackChunkName: "lang-[request]" */ '~/lang/' + file)
+          const messages = module.default ? module.default : module
+          i18n.setLocaleMessage(locale, typeof messages === 'function' ? await Promise.resolve(messages()) : messages)
+          i18n.loadedLanguages.push(locale)
+          return messages
+        } catch (error) {
+          console.error(error)
+        }
+        
       } else {
         console.warn('[nuxt-i18n] Could not find lang file for locale ' + locale)
       }

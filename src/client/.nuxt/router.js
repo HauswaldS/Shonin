@@ -3,12 +3,12 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _6eb07908 = () => import('..\\pages\\Login\\index.vue' /* webpackChunkName: "pages_Login_index" */).then(m => m.default || m)
-const _206da74c = () => import('..\\pages\\admin.vue' /* webpackChunkName: "pages_admin" */).then(m => m.default || m)
-const _f3af3854 = () => import('..\\pages\\Admin\\index.vue' /* webpackChunkName: "pages_Admin_index" */).then(m => m.default || m)
-const _b89e95d4 = () => import('..\\pages\\Admin\\Users\\index.vue' /* webpackChunkName: "pages_Admin_Users_index" */).then(m => m.default || m)
-const _667e9c34 = () => import('..\\pages\\Admin\\Applicators\\index.vue' /* webpackChunkName: "pages_Admin_Applicators_index" */).then(m => m.default || m)
-const _22035962 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+const _5e7788ce = () => import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */).then(m => m.default || m)
+const _24eb85af = () => import('..\\pages\\admin.vue' /* webpackChunkName: "pages_admin" */).then(m => m.default || m)
+const _e376481a = () => import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages_admin_index" */).then(m => m.default || m)
+const _07db0e39 = () => import('..\\pages\\admin\\users\\index.vue' /* webpackChunkName: "pages_admin_users_index" */).then(m => m.default || m)
+const _2f7e64c9 = () => import('..\\pages\\admin\\applicators\\index.vue' /* webpackChunkName: "pages_admin_applicators_index" */).then(m => m.default || m)
+const _19079c9c = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 
 
@@ -69,63 +69,96 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/Login",
-			component: _6eb07908,
-			name: "Login___en"
+			path: "/login",
+			component: _5e7788ce,
+			name: "login___en"
 		},
 		{
-			path: "/fr/Login",
-			component: _6eb07908,
-			name: "Login___fr"
+			path: "/es/login",
+			component: _5e7788ce,
+			name: "login___es"
+		},
+		{
+			path: "/fr/login",
+			component: _5e7788ce,
+			name: "login___fr"
 		},
 		{
 			path: "/admin",
-			component: _206da74c,
-			name: "admin___en"
+			component: _24eb85af,
+			children: [
+				{
+					path: "",
+					component: _e376481a,
+					name: "admin___en"
+				},
+				{
+					path: "users",
+					component: _07db0e39,
+					name: "admin-users___en"
+				},
+				{
+					path: "applicators",
+					component: _2f7e64c9,
+					name: "admin-applicators___en"
+				}
+			]
+		},
+		{
+			path: "/es/admin",
+			component: _24eb85af,
+			children: [
+				{
+					path: "",
+					component: _e376481a,
+					name: "admin___es"
+				},
+				{
+					path: "users",
+					component: _07db0e39,
+					name: "admin-users___es"
+				},
+				{
+					path: "applicators",
+					component: _2f7e64c9,
+					name: "admin-applicators___es"
+				}
+			]
 		},
 		{
 			path: "/fr/admin",
-			component: _206da74c,
-			name: "admin___fr"
-		},
-		{
-			path: "/Admin",
-			component: _f3af3854,
-			name: "Admin___en"
-		},
-		{
-			path: "/fr/Admin",
-			component: _f3af3854,
-			name: "Admin___fr"
-		},
-		{
-			path: "/Admin/Users",
-			component: _b89e95d4,
-			name: "Admin-Users___en"
-		},
-		{
-			path: "/fr/Admin/Users",
-			component: _b89e95d4,
-			name: "Admin-Users___fr"
-		},
-		{
-			path: "/Admin/Applicators",
-			component: _667e9c34,
-			name: "Admin-Applicators___en"
-		},
-		{
-			path: "/fr/Admin/Applicators",
-			component: _667e9c34,
-			name: "Admin-Applicators___fr"
+			component: _24eb85af,
+			children: [
+				{
+					path: "",
+					component: _e376481a,
+					name: "admin___fr"
+				},
+				{
+					path: "users",
+					component: _07db0e39,
+					name: "admin-users___fr"
+				},
+				{
+					path: "applicators",
+					component: _2f7e64c9,
+					name: "admin-applicators___fr"
+				}
+			]
 		},
 		{
 			path: "/",
-			component: _22035962,
+			component: _19079c9c,
 			name: "index___en"
 		},
 		{
+			path: "/es/",
+			component: _19079c9c,
+			name: "index___es"
+		},
+		{
 			path: "/fr/",
-			component: _22035962,
+			component: _19079c9c,
 			name: "index___fr"
 		}
     ],

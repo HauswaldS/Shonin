@@ -2,12 +2,11 @@
   "name": "Thermacote",
   "version": "1.0.0",
   "description": "Thermacote Project",
-  "main": "index.js",
   "scripts": {
-    "dev:server": "set NODE_ENV=development && nodemon ./src/server/server.js --exec babel-node --watch ",
+    "dev:server": "set NODE_ENV=development && nodemon ./src/server/server.js --exec babel-node --watch",
     "build:server": "set NODE_ENV=production && rimraf dist && babel . -d dist --ignore node_modules ",
-    "db:migrate-up": "babel-node ./src/server/database/migrations up",
-    "test": "npm test"
+    "dev:all": "concurrently --kill-others \"cd ./src/server && npm run dev:server\" \"cd ./src/client && npm run dev:client\"",
+    "db:migrate-up": "babel-node ./src/server/database/migrations up"
   },
   "author": "Hauswald",
   "license": "ISC",
@@ -35,11 +34,12 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "rimraf": "^2.6.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "concurrently": "^4.0.1",
     "eslint": "^4.17.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "rimraf": "^2.6.2"
   }
 }

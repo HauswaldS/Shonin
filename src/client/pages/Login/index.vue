@@ -30,11 +30,6 @@
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
             },
         },
-        // computed: {
-        //     ...mapState([
-        //         'authService',
-        //     ])
-        // },
         created() {
 
         },

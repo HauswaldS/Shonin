@@ -1,5 +1,10 @@
+TODO SERVER
+
 TODO Implement a real logger
-TODO enable websocket later
-TODO create sequelize models
-TODO non-hardcoded config - client side
+todo configure sitemap
 TODO configure CORS for prod
+
+
+TODO CLIENT
+
+TODO non-hardcoded config
