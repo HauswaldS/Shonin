@@ -17,6 +17,7 @@ import nuxt_plugin_pluginrouting_790590b2 from 'nuxt_plugin_pluginrouting_790590
 import nuxt_plugin_pluginmain_10e7a5b0 from 'nuxt_plugin_pluginmain_10e7a5b0' // Source: ./nuxt-i18n\\plugin.main.js
 import nuxt_plugin_axios_90d6a95c from 'nuxt_plugin_axios_90d6a95c' // Source: ./axios.js
 import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\plugins\\element-ui
+import nuxt_plugin_vuecarousel_50c44c8a from 'nuxt_plugin_vuecarousel_50c44c8a' // Source: ..\\plugins\\vue-carousel
 import nuxt_plugin_vueawesome_ce9a1eb0 from 'nuxt_plugin_vueawesome_ce9a1eb0' // Source: ..\\plugins\\vue-awesome
 import nuxt_plugin_graphqlapolloclient_3808d39e from 'nuxt_plugin_graphqlapolloclient_3808d39e' // Source: ..\\plugins\\graphql-apollo-client (ssr: false)
 
@@ -162,6 +163,7 @@ async function createApp (ssrContext) {
   if (typeof nuxt_plugin_pluginmain_10e7a5b0 === 'function') await nuxt_plugin_pluginmain_10e7a5b0(app.context, inject)
   if (typeof nuxt_plugin_axios_90d6a95c === 'function') await nuxt_plugin_axios_90d6a95c(app.context, inject)
   if (typeof nuxt_plugin_elementui_d905880e === 'function') await nuxt_plugin_elementui_d905880e(app.context, inject)
+  if (typeof nuxt_plugin_vuecarousel_50c44c8a === 'function') await nuxt_plugin_vuecarousel_50c44c8a(app.context, inject)
   if (typeof nuxt_plugin_vueawesome_ce9a1eb0 === 'function') await nuxt_plugin_vueawesome_ce9a1eb0(app.context, inject)
   
   if (process.browser) { 

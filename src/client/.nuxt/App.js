@@ -8,7 +8,9 @@ import '..\\node_modules\\@fortawesome\\fontawesome-free\\css\\all.css'
 
 let layouts = {
 
-  "_default": () => import('..\\layouts\\default.vue'  /* webpackChunkName: "layouts_default" */).then(m => m.default || m)
+  "_default": () => import('..\\layouts\\default.vue'  /* webpackChunkName: "layouts_default" */).then(m => m.default || m),
+
+  "_main": () => import('..\\layouts\\main.vue'  /* webpackChunkName: "layouts_main" */).then(m => m.default || m)
 
 }
 

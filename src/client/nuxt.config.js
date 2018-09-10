@@ -37,6 +37,7 @@ module.exports = {
     */
     plugins: [
         '@/plugins/element-ui',
+        '@/plugins/vue-carousel',
         '@/plugins/vue-awesome',
         {src: '@/plugins/graphql-apollo-client', ssr: false}
     ],

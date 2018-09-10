@@ -13,8 +13,8 @@
         "precommit": "npm run lint"
     },
     "dependencies": {
-        "@nuxtjs/sitemap": "^0.1.1",
         "@nuxtjs/axios": "^5.3.1",
+        "@nuxtjs/sitemap": "^0.1.1",
         "apollo-cache-inmemory": "^1.2.9",
         "apollo-client": "^2.4.1",
         "apollo-link": "^1.2.2",
@@ -31,7 +31,8 @@
         "nuxt": "^1.4.2",
         "nuxt-i18n": "^5.2.1",
         "vue-apollo": "^3.0.0-beta.21",
-        "vue-awesome": "^3.1.2"
+        "vue-awesome": "^3.1.2",
+        "vue-carousel": "^0.13.1"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.3.1",

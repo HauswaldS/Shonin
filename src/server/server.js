@@ -1,11 +1,9 @@
 import 'babel-polyfill';
 import 'babel-core/register';
 import express from 'express';
-// import http from 'http'
-import cors from 'cors'
-import bodyParser from 'body-parser'
+import cors from 'cors';
+import bodyParser from 'body-parser';
 import getDotenv from '../server/utils/dotenv';
-import check_auth from '../server/utils/check_auth';
 import graphqlHTTP from 'express-graphql';
 import Sequelize from 'sequelize';
 import jwt from 'express-jwt';
@@ -64,10 +62,10 @@ app.use('/graphql',
                 sqDb,
                 loaders
             }
-        })(req, res)
+        })(req, res);
     });
 
 
 app.listen(PORT, () => {
-    console.log('Serveur listening on port: ' + PORT)
+    console.log('Serveur listening on port: ' + PORT);
 });
