@@ -3,10 +3,12 @@ import {
     GraphQLObjectType,
     GraphQLInt,
     GraphQLList,
+    GraphQLBoolean
 } from 'graphql';
 
 import ApplicatorType from './types/applicator';
 import UserType from './types/user';
+import ClientType from './types/client';
 import LanguageType from './types/language';
 
 import check_auth from "../utils/check_auth";
@@ -50,6 +52,20 @@ const RootQueryType = new GraphQLObjectType({
             description: 'Languages supported by Thermacote.eu',
             resolve: (obj, args, {sqDb}) => {
                 return sqDb.getAllLanguages();
+            }
+        },
+        clients: {
+            type: new GraphQLList(ClientType),
+            description: 'Clients of Thermacote.eu',
+            args: {
+                skipNullLogo: {
+                    type: GraphQLBoolean
+                }
+            },
+            resolve: async (obj, args, {sqDb}) => {
+                const clients = await sqDb.getAllClients();
+                if (args.skipNullLogo) return clients.filter(c => c.logo !== null)
+                else return clients;
             }
         },
         user: {

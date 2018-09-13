@@ -1,16 +1,16 @@
-TODO * = Prioritary
 
-TODO SERVER
+-----SERVER-----
 
 TODO Implement a real logger
 todo configure sitemap *
 TODO configure CORS for prod *
 
 
-TODO CLIENT
+-----CLIENT-----
 
 TODO non-hardcoded config
 TODO Look into microdata (https://schema.org/)
 TODO missing lang icons *
 TODO Translate all routes name
 TODO LEAVE animation transition is fucked up. find out why *
+TODO HOW THE FUCK APOLLO CLIENT CACHE WORKS ? GET IT WORKING MUTHAFUCKA !**

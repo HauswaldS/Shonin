@@ -197,6 +197,7 @@
 <style scoped>
 
     header {
+        z-index: 1000;
         -moz-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
         -webkit-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
         -o-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
@@ -204,12 +205,26 @@
     }
 
     .primary-navigation.is-fixed {
+        background: white;
         position: fixed;
         top: 0;
         -moz-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
         -webkit-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
         -o-box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 2px 10px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    .primary-navigation.is-fixed .logo-container {
+        height: 45px;
+    }
+
+    .primary-navigation.is-fixed .logo-container::after {
+        display: none;
+
+    }
+
+    .primary-navigation.is-fixed .logo-container img {
+        margin-top: 0;
     }
 
     .secondary-navigation,
@@ -426,6 +441,7 @@
 
         .primary-navigation {
             justify-content: flex-end;
+            background: white;
         }
 
         .primary-navigation .logo-container {
@@ -507,6 +523,7 @@
 
         .sub-menu-container {
             position: absolute;
+            z-index: 100;
             top: 35px;
             left: 0;
             background: white;

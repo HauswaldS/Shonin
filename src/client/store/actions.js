@@ -30,7 +30,7 @@ export default {
 
         return res;
     },
-    async getLanguages({commit}) {
+    async getLanguages() {
         const res = await apolloClient.query({
             query: gql`{
                 languages {
@@ -39,7 +39,28 @@ export default {
                 }
             }`
         });
-        commit('SET_LANGUAGES', res.data.languages);
+        return res;
+    },
+    async getClients() {
+        const res = await apolloClient.query({
+            query: gql`{
+                clients {
+                    logo,
+                    website
+                }
+            }`
+        });
+        return res;
+    },
+    async getCaseStudies() {
+        const res = await apolloClient.query({
+            query: gql`{
+                caseStudies {
+                    
+                }
+            }`
+        })
+
         return res;
     }
 

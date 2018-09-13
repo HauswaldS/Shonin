@@ -1,6 +1,39 @@
 /*GENERAL*/
-body {
+
+html {
     font-family: Roboto;
+    font-size: 64% !important
+}
+
+h1 {
+    font-size: 2.827rem;
+    line-height: 2.827rem;
+}
+
+h2 {
+    font-size: 1.999rem;
+    line-height: 1.999rem;
+}
+
+h3 {
+    font-size: 1.414rem;
+    line-height: 1.414rem;
+}
+
+h4 {
+
+}
+
+@media all and (min-width: 768px) {
+    html {
+        font-size: 80% !important;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    html {
+        font-size: 100% !important;
+    }
 }
 
 a:hover {

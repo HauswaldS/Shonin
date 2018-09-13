@@ -1,6 +1,7 @@
 export default ({
                     sqPool,
                     user,
+                    client,
                     applicator,
                     case_study,
                     language,
@@ -21,6 +22,11 @@ export default ({
         getAllLanguages() {
             return language.findAll({raw: true})
                 .then(languages => languages)
+                .catch(err => console.log(err));
+        },
+        getAllClients() {
+            return client.findAll({raw: true})
+                .then(clients => clients)
                 .catch(err => console.log(err));
         },
         getUserById(id) {

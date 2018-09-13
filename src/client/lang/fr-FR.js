@@ -36,6 +36,26 @@ export default {
                     subtitle: 'Helps lower maintenance costs.'
                 },
             }
-        }
+        },
+        product_presentation: {
+            title: "ThermaCote is a paint-like single component spray-applied water-based acrylic material that incorporates Ceramic Technology.",
+            text: "Its ease of application for new or retrofit construction allows for the performance enhancement of insulation of Floors, HVAC Duct Work, Wall Systems, and Roof Systems for all types of substrates including metal, brick, cement block, concrete, wood, or sheet rock.",
+            wanna_know_more: 'Want to know more about the product',
+            card1: {
+                title: "Industrial",
+                text: "WAREHOUSES, HVAC, CHILLERS, STEEL, ALUMINIUM, STEAM LINES, STEEL BEAMS, FRAMING, STEEL CONTAINERS, SILOS, PIPES, VALVES, STORAGE TANKS, JETTIES, VESSELS, STRUCTURAL STEEL, FACTORY ROOFS"
+            },
+            card2: {
+                title: "Construction",
+                text: "ROOF AND WALL SYSTEMS, BRICK, CEMENT BLOCK, CONCRETE, WOOD, SHEETROCK, TILES, ASPHALT"
+            },
+            card3: {
+                title: "Specialty",
+                text: "COLD ROOMS, WATER TANKS, ROADS, POOL DECKS, TRUCKS, CARS/RACE CARS, BUSES, CAMPERS/RVs, FEED CONTAINERS, RAILROAD CARS, BARNS/STABLES, CEMENT DRUMS, INTERIOR BOAT HULLS, PLASTIC, GLASS, SKYLIGHTS"
+            },
+        },
+        our_clients: "Our clients",
+        case_studies: "Case studies",
+        certifications: "Certifications",
     }
 }

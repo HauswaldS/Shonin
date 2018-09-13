@@ -18,7 +18,8 @@ module.exports = {
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto'}
+            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto'},
+            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Comfortaa'}
 
         ]
     },
@@ -80,6 +81,9 @@ module.exports = {
     ],
     router: {
         middleware: 'check_auth'
+    },
+    env: {
+        baseUrl: 'http://localhost:8080'
     },
     /*
     ** Build configuration

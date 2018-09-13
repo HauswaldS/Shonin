@@ -1,10 +1,8 @@
 export default {
-    applicators: [],
     loggedUser: {
         id: '',
         name: '',
         email: ''
     },
-    languages: [],
-    locale: 'en'
+    root: process.env.baseUrl
 }
