@@ -5,7 +5,7 @@ import {
 } from 'graphql';
 
 export default new GraphQLObjectType({
-    name: 'ClientType',
+    name: 'CertificationType',
     fields: {
         id: {type: GraphQLID},
         name: {type: GraphQLString},

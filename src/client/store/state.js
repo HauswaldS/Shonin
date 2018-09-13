@@ -4,5 +4,6 @@ export default {
         name: '',
         email: ''
     },
+    languages: [],
     root: process.env.baseUrl
 }

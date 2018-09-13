@@ -5,11 +5,9 @@ import {
 } from 'graphql';
 
 export default new GraphQLObjectType({
-    name: 'ClientType',
+    name: 'ContentType',
     fields: {
         id: {type: GraphQLID},
-        name: {type: GraphQLString},
-        website: {type: GraphQLString},
-        logo: {type: GraphQLString}
+        label: {type: GraphQLString},
     }
 })

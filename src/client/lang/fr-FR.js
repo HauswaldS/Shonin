@@ -57,5 +57,6 @@ export default {
         our_clients: "Our clients",
         case_studies: "Case studies",
         certifications: "Certifications",
-    }
+    },
+
 }

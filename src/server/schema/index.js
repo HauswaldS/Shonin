@@ -10,6 +10,8 @@ import ApplicatorType from './types/applicator';
 import UserType from './types/user';
 import ClientType from './types/client';
 import LanguageType from './types/language';
+import CaseStudyType from './types/case-study';
+import CertificationType from './types/certifications';
 
 import check_auth from "../utils/check_auth";
 
@@ -51,7 +53,7 @@ const RootQueryType = new GraphQLObjectType({
             type: new GraphQLList(LanguageType),
             description: 'Languages supported by Thermacote.eu',
             resolve: (obj, args, {sqDb}) => {
-                return sqDb.getAllLanguages();
+                return sqDb.getAllLanguages(args);
             }
         },
         clients: {
@@ -64,8 +66,32 @@ const RootQueryType = new GraphQLObjectType({
             },
             resolve: async (obj, args, {sqDb}) => {
                 const clients = await sqDb.getAllClients();
-                if (args.skipNullLogo) return clients.filter(c => c.logo !== null)
+                if (args.skipNullLogo) return clients.filter(c => c.logo !== null);
                 else return clients;
+            }
+        },
+        caseStudies: {
+            type: new GraphQLList(CaseStudyType),
+            description: 'Case studies about ThermaCote',
+            args: {
+                limit: {
+                    type: GraphQLInt
+                }
+            },
+            resolve: (obj, args, {sqDb}) => {
+                return sqDb.getAllCaseStudies(args);
+            }
+        },
+        certifications: {
+            type: new GraphQLList(CertificationType),
+            description: 'Certifications acquired by ThermaCote',
+            args: {
+                limit: {
+                    type: GraphQLInt
+                }
+            },
+            resolve: (obj, args, {sqDb}) => {
+                return sqDb.getAllCertifications(args);
             }
         },
         user: {

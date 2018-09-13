@@ -30,7 +30,7 @@ export default {
 
         return res;
     },
-    async getLanguages() {
+    async getLanguages({commit}) {
         const res = await apolloClient.query({
             query: gql`{
                 languages {
@@ -39,6 +39,7 @@ export default {
                 }
             }`
         });
+        commit('SET_LANGUAGES', res);
         return res;
     },
     async getClients() {
@@ -56,12 +57,30 @@ export default {
         const res = await apolloClient.query({
             query: gql`{
                 caseStudies {
-                    
+                    contents {
+                        label
+                    }
                 }
             }`
-        })
+        });
 
         return res;
+    },
+    async getCertifications() {
+        const res = await apolloClient.query({
+            query: gql`{
+                certifications {
+                    name,
+                    label,
+                    logo
+                }
+            }`
+        });
+
+        return res;
+    },
+    async nuxtServerInit({dispatch}) {
+        await dispatch('getLanguages')
     }
 
 }

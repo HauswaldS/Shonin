@@ -40,15 +40,25 @@
         </section>
         <article id="our-clients">
             <h2>{{ $t('our_clients')}}</h2>
-
+            <!--<swiper-slide v-for="client in clients"-->
+            <!--:key="client.logo">-->
+            <!--{{client.logo}}-->
+            <!--</swiper-slide>-->
         </article>
         <article id="case-studies">
             <h2>{{ $t('case_studies')}}</h2>
+            <!--<swiper-slide v-for="caseStudy in caseStudies"-->
+            <!--:key="`cs${caseStudy.id}`">-->
+            <!--{{caseStudy.id}}-->
+            <!--</swiper-slide>-->
 
         </article>
         <article id="certifications">
             <h2>{{ $t('certifications')}}</h2>
-
+            <!--<swiper-slide v-for="caseStudy in caseStudies"-->
+            <!--:key="`cs${caseStudy.id}`">-->
+            <!--{{caseStudy.contents[0]}}-->
+            <!--</swiper-slide>-->
         </article>
     </section>
 
@@ -135,14 +145,11 @@
             }
         },
         async asyncData({store, params}) {
-            const languages = await store.dispatch('getLanguages');
-
             const clients = await store.dispatch('getClients', {skipNullLogo: true});
 
             const caseStudies = await store.dispatch('getCaseStudies', {limit: 3});
-
+            console.log(clients, caseStudies)
             return {
-                languages,
                 clients,
                 caseStudies
             }
