@@ -49,7 +49,7 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
   return null
 }
   const routesNameSeparator = '___'
-  const locales = getLocaleCodes([{"code":"en","file":"en-US.js"},{"code":"es","file":"es-ES.js"},{"code":"fr","file":"fr-FR.js"}])
+  const locales = getLocaleCodes([{"code":"en","iso":"en-US","file":"en-US.js"},{"code":"es","iso":"es-ES","file":"es-ES.js"},{"code":"fr","iso":"fr-FR","file":"fr-FR.js"}])
   const syncVuex = (locale = null, messages = null) => {
   if (vuex && store) {
     if (locale !== null && vuex.mutations.setLocale) {
@@ -65,7 +65,7 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
   let locale = app.i18n.locale || app.i18n.defaultLocale || null
 
   // Handle root path redirect
-  const rootRedirect = ''
+  const rootRedirect = 'en'
   if (route.path === '/' && rootRedirect) {
     redirect('/' + rootRedirect)
     return

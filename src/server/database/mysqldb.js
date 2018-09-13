@@ -1,4 +1,10 @@
-export default ({sqPool, users, applicators, case_studies}) => {
+export default ({
+                    sqPool,
+                    user,
+                    applicator,
+                    case_study,
+                    language,
+                }) => {
     return {
         getAllApplicators({limit = 10, page = 1}) {
             return sqPool.query(`SELECT * FROM applicator LIMIT ${limit} OFFSET ${(limit * page) - limit}`, {type: sqPool.QueryTypes.SELECT})
@@ -12,8 +18,13 @@ export default ({sqPool, users, applicators, case_studies}) => {
                 .then(rows => rows)
                 .catch(err => console.log(err))
         },
+        getAllLanguages() {
+            return language.findAll({raw: true})
+                .then(languages => languages)
+                .catch(err => console.log(err));
+        },
         getUserById(id) {
-            return users.find({where: {id}})
+            return user.find({where: {id}})
                 .then(user => {
                     return [user.get({
                         plain: true
@@ -22,7 +33,7 @@ export default ({sqPool, users, applicators, case_studies}) => {
                 .catch(err => console.log(err))
         },
         addNewUser(user) {
-            return users.findOrCreate({where: {auth0_id: user.auth0_id}, defaults: user})
+            return user.findOrCreate({where: {auth0_id: user.auth0_id}, defaults: user})
                 .spread((user, created) => {
                     return user.get({
                         plain: true

@@ -1,5 +1,6 @@
 <template>
     <el-container direction="vertical">
+        <main-menu></main-menu>
         <el-main>
             <nuxt/>
         </el-main>
@@ -7,7 +8,13 @@
 </template>
 
 <script>
-    export default {}
+    import MainMenu from '@/components/admin/ui/menu/MainMenu.vue';
+
+    export default {
+        components: {
+            MainMenu
+        }
+    }
 </script>
 <style>
     html {

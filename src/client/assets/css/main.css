@@ -1,0 +1,109 @@
+/*GENERAL*/
+body {
+    font-family: Roboto;
+}
+
+a:hover {
+    color: gray !important;
+}
+
+/*BUTTONS*/
+
+.t-btn {
+    border: solid 1px;
+    border-color: #d7d7d7;
+    line-height: 25px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #005daa;
+    cursor: pointer;
+}
+
+.t-btn:hover {
+    background: #0088f9 !important;
+}
+
+.icon-btn {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+/*POPOVER*/
+
+.arrow-top-right,
+.arrow-top-center {
+    position: relative;
+    background: white;
+    top: -13px;
+    right: 0;
+}
+
+.arrow-top-right:after, .arrow-top-right:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow-top-center:after, .arrow-top-center:before {
+    bottom: 100%;
+    left: 25%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow-top-right:after,
+.arrow-top-center:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #fff;
+    border-width: 11px;
+    margin-left: 52px;
+    border-radius: 5px;
+}
+
+/*TRANSITIONS*/
+
+.menu-popover-enter,
+.menu-popover-leave-to {
+    opacity: 0;
+    transform: rotateY(50deg);
+}
+
+.menu-popover-enter-to,
+.menu-popover-leave {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.menu-popover-enter-active,
+.menu-popover-leave-active {
+    transition: opacity, transform 200ms ease-out;
+}
+
+.menu-slide-right-enter,
+.menu-slide-right-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.menu-slide-right-enter-to,
+.menu-slide-right-leave {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-slide-right-enter-active,
+.menu-slide-right-leave-active {
+    transition: all, transform 200ms ease-out;
+}
+
+

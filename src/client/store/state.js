@@ -4,5 +4,7 @@ export default {
         id: '',
         name: '',
         email: ''
-    }
+    },
+    languages: [],
+    locale: 'en'
 }

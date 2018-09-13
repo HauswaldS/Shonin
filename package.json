@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Thermacote website, root directory",
   "scripts": {
-    "prod:all": "concurrently --kill-others \"cd ./src/server && npm run dev:server\" \"cd ./src/client && npm run dev:client\"",
-    "dev:all": "concurrently --kill-others \"cd ./src/server && npm run start:server\" \"cd ./src/client && npm run start:client\""
+    "dev:all": "concurrently --kill-others \"cd ./src/server && npm run dev:server\" \"cd ./src/client && npm run dev:client\"",
+    "prod:all": "concurrently --kill-others \"cd ./src/server && npm run start:server\" \"cd ./src/client && npm run start:client\""
   },
   "author": "Hauswald",
   "license": "ISC",

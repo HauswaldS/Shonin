@@ -3,21 +3,27 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '..\\node_modules\\element-ui\\lib\\theme-chalk\\index.css'
 
+import '..\\node_modules\\swiper\\dist\\css\\swiper.css'
+
 import '..\\node_modules\\@fortawesome\\fontawesome-free\\css\\all.css'
+
+import '..\\assets\\css\\main.css'
 
 
 let layouts = {
 
-  "_default": () => import('..\\layouts\\default.vue'  /* webpackChunkName: "layouts_default" */).then(m => m.default || m),
+  "_admin": () => import('..\\layouts\\admin.vue'  /* webpackChunkName: "layouts_admin" */).then(m => m.default || m),
 
-  "_main": () => import('..\\layouts\\main.vue'  /* webpackChunkName: "layouts_main" */).then(m => m.default || m)
+  "_main": () => import('..\\layouts\\main.vue'  /* webpackChunkName: "layouts_main" */).then(m => m.default || m),
+
+  "_default": () => import('./layouts/default.vue'  /* webpackChunkName: "layouts_default" */).then(m => m.default || m)
 
 }
 
 let resolvedLayouts = {}
 
 export default {
-  head: {"title":"shonin-client","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Vue + Nuxt + Graphql front-end for the Shonin CMS "}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+  head: {"title":"shonin-client","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Vue + Nuxt + Graphql front-end for the Shonin CMS "}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto"}],"style":[],"script":[]},
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
     const layoutEl = h(this.layout || 'nuxt')

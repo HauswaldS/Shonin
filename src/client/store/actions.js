@@ -29,6 +29,19 @@ export default {
         });
 
         return res;
+    },
+    async getLanguages({commit}) {
+        const res = await apolloClient.query({
+            query: gql`{
+                languages {
+                    code,
+                    label
+                }
+            }`
+        });
+        commit('SET_LANGUAGES', res.data.languages);
+        return res;
     }
+
 }
 

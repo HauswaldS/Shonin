@@ -1,5 +1,7 @@
 const pkg = require('./package');
 const nodeExternals = require('webpack-node-externals');
+const getDotenv = require('../server/utils/dotenv');
+getDotenv();
 
 module.exports = {
     mode: 'universal',
@@ -15,7 +17,9 @@ module.exports = {
             {hid: 'description', name: 'description', content: pkg.description}
         ],
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+            {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto'}
+
         ]
     },
 
@@ -29,17 +33,18 @@ module.exports = {
     */
     css: [
         'element-ui/lib/theme-chalk/index.css',
-        '@fortawesome/fontawesome-free/css/all.css'
+        'swiper/dist/css/swiper.css',
+        '@fortawesome/fontawesome-free/css/all.css',
+        '@/assets/css/main.css'
     ],
-
     /*
     ** Plugins to load before mounting the App
     */
     plugins: [
         '@/plugins/element-ui',
-        '@/plugins/vue-carousel',
         '@/plugins/vue-awesome',
-        {src: '@/plugins/graphql-apollo-client', ssr: false}
+        {src: '@/plugins/graphql-apollo-client', ssr: false},
+        {src: '@/plugins/vue-awesome-swiper.js', ssr: false}
     ],
 
     /*
@@ -53,17 +58,22 @@ module.exports = {
             locales: [
                 {
                     code: 'en',
+                    iso: 'en-US',
                     file: 'en-US.js'
                 },
                 {
                     code: 'es',
+                    iso: 'es-ES',
                     file: 'es-ES.js'
                 },
                 {
                     code: 'fr',
+                    iso: 'fr-FR',
                     file: 'fr-FR.js'
                 }
             ],
+            rootRedirect: 'en',
+            strategy: 'prefix',
             lazy: true,
             langDir: 'lang/'
         }]
@@ -92,7 +102,7 @@ module.exports = {
             if (ctx.isServer) {
                 config.externals = [
                     nodeExternals({
-                        whitelist: [/^vue-awesome/]
+                        whitelist: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^vue-awesome/]
                     })
                 ];
             }
