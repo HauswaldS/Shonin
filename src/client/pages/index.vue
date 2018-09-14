@@ -148,7 +148,7 @@
             const clients = await store.dispatch('getClients', {skipNullLogo: true});
 
             const caseStudies = await store.dispatch('getCaseStudies', {limit: 3});
-            console.log(clients, caseStudies)
+
             return {
                 clients,
                 caseStudies

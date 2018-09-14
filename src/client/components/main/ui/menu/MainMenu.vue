@@ -179,7 +179,7 @@
                 language_switcher: false,
                 mobile_menu: false,
                 sub_menu: false,
-            }
+            };
         },
         computed: {
             ...mapState([
@@ -189,9 +189,11 @@
             currentFlag() {
                 return require(`@/assets/images/flag-${this.i18n.locale}.png`);
             }
+        },
+        created() {
+            console.log('COMPONENT', this.languages);
         }
-
-    }
+    };
 </script>
 
 <style scoped>
