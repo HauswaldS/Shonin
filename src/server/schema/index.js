@@ -109,7 +109,7 @@ const RootQueryType = new GraphQLObjectType({
     }
 });
 
-// MUTATION
+// MUTATIONS
 
 import AddUserMutation from './mutations/add-user';
 

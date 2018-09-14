@@ -4,7 +4,7 @@
   "description": "Thermacote website, server side made with Express",
   "scripts": {
     "dev:server": "set NODE_ENV=development && nodemon ./server.js --exec babel-node --watch",
-    "build:server": "set NODE_ENV=production && rimraf dist && babel . -d dist --ignore node_modules ",
+    "build:server": "set NODE_ENV=production && rimraf dist && babel . -d dist --ignore node_modules",
     "start:server": "set NODE_ENV=production && node ./server.js",
     "db:migrate-up": "babel-node ./database/migrations up"
   },
