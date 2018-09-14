@@ -12,10 +12,10 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
-import nuxt_plugin_pluginseo_48ea9986 from 'nuxt_plugin_pluginseo_48ea9986' // Source: ./nuxt-i18n\\plugin.seo.js
-import nuxt_plugin_pluginrouting_c1b19e98 from 'nuxt_plugin_pluginrouting_c1b19e98' // Source: ./nuxt-i18n\\plugin.routing.js
-import nuxt_plugin_pluginmain_515a973b from 'nuxt_plugin_pluginmain_515a973b' // Source: ./nuxt-i18n\\plugin.main.js
-import nuxt_plugin_axios_38a79b65 from 'nuxt_plugin_axios_38a79b65' // Source: ./axios.js
+import nuxt_plugin_pluginseo_65082bb0 from 'nuxt_plugin_pluginseo_65082bb0' // Source: ./nuxt-i18n\\plugin.seo.js
+import nuxt_plugin_pluginrouting_790590b2 from 'nuxt_plugin_pluginrouting_790590b2' // Source: ./nuxt-i18n\\plugin.routing.js
+import nuxt_plugin_pluginmain_10e7a5b0 from 'nuxt_plugin_pluginmain_10e7a5b0' // Source: ./nuxt-i18n\\plugin.main.js
+import nuxt_plugin_axios_90d6a95c from 'nuxt_plugin_axios_90d6a95c' // Source: ./axios.js
 import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\plugins\\element-ui
 import nuxt_plugin_vueawesome_ce9a1eb0 from 'nuxt_plugin_vueawesome_ce9a1eb0' // Source: ..\\plugins\\vue-awesome
 import nuxt_plugin_graphqlapolloclient_3808d39e from 'nuxt_plugin_graphqlapolloclient_3808d39e' // Source: ..\\plugins\\graphql-apollo-client (ssr: false)
@@ -158,10 +158,10 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
-  if (typeof nuxt_plugin_pluginseo_48ea9986 === 'function') await nuxt_plugin_pluginseo_48ea9986(app.context, inject)
-  if (typeof nuxt_plugin_pluginrouting_c1b19e98 === 'function') await nuxt_plugin_pluginrouting_c1b19e98(app.context, inject)
-  if (typeof nuxt_plugin_pluginmain_515a973b === 'function') await nuxt_plugin_pluginmain_515a973b(app.context, inject)
-  if (typeof nuxt_plugin_axios_38a79b65 === 'function') await nuxt_plugin_axios_38a79b65(app.context, inject)
+  if (typeof nuxt_plugin_pluginseo_65082bb0 === 'function') await nuxt_plugin_pluginseo_65082bb0(app.context, inject)
+  if (typeof nuxt_plugin_pluginrouting_790590b2 === 'function') await nuxt_plugin_pluginrouting_790590b2(app.context, inject)
+  if (typeof nuxt_plugin_pluginmain_10e7a5b0 === 'function') await nuxt_plugin_pluginmain_10e7a5b0(app.context, inject)
+  if (typeof nuxt_plugin_axios_90d6a95c === 'function') await nuxt_plugin_axios_90d6a95c(app.context, inject)
   if (typeof nuxt_plugin_elementui_d905880e === 'function') await nuxt_plugin_elementui_d905880e(app.context, inject)
   if (typeof nuxt_plugin_vueawesome_ce9a1eb0 === 'function') await nuxt_plugin_vueawesome_ce9a1eb0(app.context, inject)
   

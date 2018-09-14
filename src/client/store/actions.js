@@ -39,8 +39,8 @@ export default {
                 }
             }`
         });
-        commit('SET_LANGUAGES', res);
-        return res;
+        commit('SET_LANGUAGES', res.data.languages);
+        return res.data.languages;
     },
     async getClients() {
         const res = await apolloClient.query({
@@ -51,7 +51,7 @@ export default {
                 }
             }`
         });
-        return res;
+        return res.data.clients;
     },
     async getCaseStudies() {
         const res = await apolloClient.query({
@@ -64,7 +64,7 @@ export default {
             }`
         });
 
-        return res;
+        return res.data.caseStudies;
     },
     async getCertifications() {
         const res = await apolloClient.query({
@@ -77,11 +77,11 @@ export default {
             }`
         });
 
-        return res;
+        return res.data.certifications;
     },
     async nuxtServerInit({dispatch}) {
-        await dispatch('getLanguages')
+        await dispatch('getLanguages');
     }
 
-}
+};
 
